@@ -1,0 +1,17 @@
+<h2>Login</h2>
+<form>
+    <ul>
+        <li>
+            <label >User name:</label>
+            <input type="text" name="username" [(ngModel)]="username">
+        </li>
+        <li>
+            <label>password:</label>
+            <input type="password" name="password" [(ngModel)]="password"> 
+        </li>
+        <li>
+            <button type="button" (click)="register()">Register</button>
+            <button type="button" (click)="login()">Login</button>
+        </li>
+    </ul>    
+</form>
