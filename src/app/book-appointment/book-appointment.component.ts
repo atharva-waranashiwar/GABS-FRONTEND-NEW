@@ -1,4 +1,6 @@
+import { CalenderlistService } from './../calenderlist.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-book-appointment',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent implements OnInit {
-
-  constructor() { }
+  search : string ="";
+  searchby:string="username"
+  searchedCalenders:Array<any>=[];
+  constructor(private calenderlist:CalenderlistService) { }
 
   ngOnInit(): void {
+  }
+  searchfn(){
+    
   }
 
 }
