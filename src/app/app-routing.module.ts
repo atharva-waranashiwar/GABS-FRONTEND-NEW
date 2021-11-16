@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyCalenderComponent } from './my-calender/my-calender.component';
 import { RegisterComponent } from './register/register.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { //default
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'register',
     component:RegisterComponent
+  },
+  {
+    path: '**',
+    component:PagenotfoundComponent
   }
 
 ];
