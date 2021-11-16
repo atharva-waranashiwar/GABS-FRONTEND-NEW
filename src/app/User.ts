@@ -2,14 +2,14 @@ import { AppointmentEntity } from "./AppointmentEntity";
 import { AppointmentCalendar } from "./AppointmentCalendar";
 
 export class User{
-    private _userID:number;
-    private _userName:string;
-    private _mobileNumber:string;
-    private _DoB:Date;
-    private _email:string;
-    private _isAdmin:boolean;
-    private _listMyBookedAppointmentEntries:AppointmentEntity[];
-    private _listMyAppointmentCalendars:AppointmentCalendar[];
+    private _userID:number = 0;
+    private _userName:string = "";
+    private _mobileNumber:string = "";
+    private _DoB:Date = new Date();
+    private _email:string = "";
+    private _isAdmin:boolean = false;
+    private _listMyBookedAppointmentEntries:AppointmentEntity[] = [];
+    private _listMyAppointmentCalendars:AppointmentCalendar[] = [];
 
     constructor(userID:number, userName:string, mobileNumber:string,DoB:Date,
             email:string, isAdmin:boolean, listMyBookedAppointmentEntries:AppointmentEntity[],

@@ -18,6 +18,8 @@ import { RegisterComponent } from './register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
+import { PortService } from './port.service';
+import { ServerService } from './server.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { UserService } from './user.service';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService],
+  providers: [UserService, PortService, ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
