@@ -11,11 +11,11 @@ export class CalenderService {
   private _cdata = new ReplaySubject<AppointmentCalendar>();
   readonly user = this._cdata.asObservable();
 
-  public getUser() {
-    this.http.get('https://gorest.co.in/public/v1/users').subscribe(data=>{
-      return data;
-    })
+  getUser() {
+    
+      return this.http.get<AppointmentCalendar[]>('https://jsonplaceholder.typicode.com/users');
   }
+ 
 
   public setCalender(cd: AppointmentCalendar) {
     const a={
@@ -28,9 +28,9 @@ export class CalenderService {
     }
     //console.log(a);
     this._cdata.next(cd);
-    this.http.post<any>('',a).subscribe(data => {
-    //  console.log(data);
-  });
+  //   this.http.post<any>('',a).subscribe(data => {
+  //   //  console.log(data);
+  // });
     
   }
 
