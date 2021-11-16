@@ -9,7 +9,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { MyCalenderComponent } from './my-calender/my-calender.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { CreateNewCalenderComponent } from './create-new-calender/create-new-calender.component';
 import { LoginComponent } from './login/login.component';
@@ -38,6 +38,7 @@ import { ServerService } from './server.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule
   ],

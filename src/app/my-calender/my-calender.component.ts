@@ -8,6 +8,10 @@ import { Router } from '@angular/router';
 })
 export class MyCalenderComponent implements OnInit {
 
+ 
+   
+  
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
