@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
 import { PortService } from './port.service';
 import { ServerService } from './server.service';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ServerService } from './server.service';
     BookAppointmentComponent,
     CreateNewCalenderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

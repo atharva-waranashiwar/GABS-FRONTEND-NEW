@@ -1,16 +1,17 @@
 <h2>Login</h2>
+<div class="error">{{ errorMessage }}</div>
 <form>
     <ul>
         <li>
-            <label >User name:</label>
+            <label >Username : </label>
             <input type="text" name="username" [(ngModel)]="username">
         </li>
         <li>
-            <label>password:</label>
+            <label>Password : </label>
             <input type="password" name="password" [(ngModel)]="password"> 
         </li>
         <li>
-            <button type="button" (click)="register()">Register</button>
+            <button type="button" (click)="register()">Create New Account</button>
             <button type="button" (click)="login()">Login</button>
         </li>
     </ul>    
