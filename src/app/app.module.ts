@@ -18,7 +18,6 @@ import { RegisterComponent } from './register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
-import { CalenderlistComponent } from './calenderlist/calenderlist.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +30,7 @@ import { CalenderlistComponent } from './calenderlist/calenderlist.component';
     BookAppointmentComponent,
     CreateNewCalenderComponent,
     LoginComponent,
-    RegisterComponent,
-    CalenderlistComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
