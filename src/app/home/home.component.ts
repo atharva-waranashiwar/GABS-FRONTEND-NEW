@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthServicveService } from '../auth-servicve.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,16 @@ export class HomeComponent implements OnInit {
 
   username:string="";// change username to userID
 
-  constructor(private auth:AuthServicveService) { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
-    this.auth.getUsername().subscribe(newusername => {
-      this.username = newusername;
-    });
+    this.userService.getUser().subscribe(user =>
+      {
+        console.log(this.username);
+        console.log("imhere");
+        
+        this.username = user.getUserName();
+      })
     
   }
 
