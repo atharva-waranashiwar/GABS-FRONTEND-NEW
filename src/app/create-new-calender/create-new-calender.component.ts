@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AppointmentCalendar } from '../AppointmentCalendar';
-import { CalenderService } from '../calender.service';
+import { ServerService } from '../server.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-create-new-calender',
@@ -23,19 +24,24 @@ export class CreateNewCalenderComponent implements OnInit {
     "PANJIM"
   ]
   selected = "----"
-  
- uname="abc";
- uid=1;
+ uid=0;
+ uname="";
+ u_obj=this.us.getUser().subscribe(value=>{
+   this.uid=value['_userID'];
+   this.uname=value['_userName'];
+ });
+ 
  
 
   onSubmit(data: any) {
-    let ac:AppointmentCalendar = new AppointmentCalendar(this.uid,this.uname,data.type,data.location,data.desc,[]);
-    this.gc.setCalender(ac);
+    this.ss.addAppointmentCalendar(data.cid,this.uid,data.type,data.location,data.desc);
+    
   }
 
-  constructor(private gc:CalenderService) { }
+  constructor(private ss:ServerService, private us:UserService) { }
 
   ngOnInit(): void {
+
   }
   
 

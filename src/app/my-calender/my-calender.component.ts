@@ -1,7 +1,8 @@
+import { ServerService } from './../server.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppointmentCalendar } from '../AppointmentCalendar';
-import { CalenderService } from '../calender.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-my-calender',
@@ -14,41 +15,28 @@ export class MyCalenderComponent implements OnInit {
    
   
 
-  constructor(private router:Router,private gc:CalenderService) { }
+  constructor(private router:Router,private ss:ServerService,private us:UserService) { }
    
    
-   cl:AppointmentCalendar[]=[];
+   appCalenderList:Array<any>=[];
 
-   ce= [  
-    {  
-      "_acID": 1,  
-      "_type": "MEDICAL",  
-      "_location": "MARGAO",  
-      
-    },  
-    {  
-      "_acID": 2,  
-      "_type": "BUSINESS",  
-      "_location": "MAPUSA",  
-    },  
-    {  
-      "_acID": 3,  
-      "_type": "MEDICAL",  
-      "_location": "VASCO",   
-    },  
-    {  
-      "_acID": 4,  
-      "_type": "MEDICAL",  
-      "_location": "PANAJI",  
-    }
-  ]
+  
+   uid=0;
+ 
+ u_obj=this.us.getUser().subscribe(value=>{
+   this.uid=value['_userID'];
+  
+ });
+ 
+
+ 
 
    
    
   ngOnInit(): void {
-    this.gc.getUser().subscribe(
+     this.ss.getAppointmentCalendar(this.uid).subscribe(
       (response)=>{
-        this.cl=response;
+        this.appCalenderList=response;
        
       }
     )
@@ -59,11 +47,7 @@ export class MyCalenderComponent implements OnInit {
     this.router.navigate(['/createCal']);
     
   }
-  viewApp(){
   
-    this.router.navigate(['/']);
-    
-  }
 
 
 

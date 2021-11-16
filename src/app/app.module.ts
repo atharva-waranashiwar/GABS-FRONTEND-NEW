@@ -20,6 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
 import { PortService } from './port.service';
 import { ServerService } from './server.service';
+import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
+import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { ServerService } from './server.service';
     BookAppointmentComponent,
     CreateNewCalenderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CalenderdetailComponent,
+    AppentrylistComponent
   ],
   imports: [
     BrowserModule,
