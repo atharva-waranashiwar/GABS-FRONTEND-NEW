@@ -38,11 +38,11 @@ export class ServerService {
       'userName':userName,
       'mobileNumber':mobileNumber,
       'Dob':DoB,
-      'email':userName,
+      'email':email,
       'isAdmin':false,
       'password':password
     }
-    return this.http.post('http://localhost:'+ this.portNo+'/reg', jsonObject)
+    return this.http.post('http://localhost:'+ this.portNo+'/reg/'+DoB, jsonObject)
   }
 
   public getAppointmentEntriesByOwner(userID:number):Observable<any>
