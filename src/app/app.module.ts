@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 //import {RouterModule,Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { UserService } from './user.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
