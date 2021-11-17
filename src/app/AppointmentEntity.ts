@@ -58,6 +58,41 @@ export class AppointmentEntity{
     public setTimeSlot(timeSlot:number) {
         this._timeSlot = timeSlot;
     }
+    public getTime():string
+    {
+        if(this._timeSlot == 0)
+        {
+            return "9 am - 10 am";
+        }
+        else if(this._timeSlot == 1)
+        {
+            return "10 am - 11 am";
+        }
+        else if(this._timeSlot == 2)
+        {
+            return "11 am - 12 pm";
+        }
+        else if(this._timeSlot == 3)
+        {
+            return "12 pm - 1 pm";
+        }
+        else if(this._timeSlot == 4)
+        {
+            return "2 pm - 3 pm";
+        }
+        else if(this._timeSlot == 7)
+        {
+            return "3 pm - 4 pm";
+        }
+        else if(this._timeSlot == 5)
+        {
+            return "4 pm - 5 pm";
+        }
+        else (this._timeSlot == 6)
+        {
+            return "5 pm - 6 pm";
+        }
+    }
     public getAppointeeID():string {
         return this._apointeeid;
     }

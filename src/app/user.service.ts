@@ -9,7 +9,7 @@ export class UserService {
   private _user = new ReplaySubject<User>();
   readonly user = this._user.asObservable();
 
-  public getUser(): Observable<any> {
+  public getUser(): Observable<User> {
     return this._user;
   }
   public setUser(user: User) {

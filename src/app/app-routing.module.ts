@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { MyCalenderComponent } from './my-calender/my-calender.component';
 import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
 
 const routes: Routes = [
   { //default
@@ -28,8 +29,8 @@ const routes: Routes = [
     component:MyCalenderComponent,
     children:[
       {
-        path:'appEList/:id',
-        component:AppentrylistComponent
+        path:'calendardetails/:AcID',
+        component:CalenderdetailComponent
       }
     ]
   },

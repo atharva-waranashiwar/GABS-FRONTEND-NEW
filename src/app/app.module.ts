@@ -38,7 +38,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     LoginComponent,
     RegisterComponent,
     CalenderdetailComponent,
-    AppentrylistComponent
+    AppentrylistComponent,
     PagenotfoundComponent
 
   ],
