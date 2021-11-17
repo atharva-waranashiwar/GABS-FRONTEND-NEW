@@ -22,6 +22,8 @@ import { PortService } from './port.service';
 import { ServerService } from './server.service';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
 import { AppentrylistComponent } from './appentrylist/appentrylist.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { AppentrylistComponent } from './appentrylist/appentrylist.component';
     RegisterComponent,
     CalenderdetailComponent,
     AppentrylistComponent
+    PagenotfoundComponent
+
   ],
   imports: [
     BrowserModule,
