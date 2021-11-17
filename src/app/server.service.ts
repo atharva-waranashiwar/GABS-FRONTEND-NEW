@@ -59,6 +59,8 @@ export class ServerService {
       'location':location,
       'description':description
     }
+    console.log(jsonObject);
+    
     return this.http.post('http://localhost:'+ this.portNo+'/ac/'+userID.toString()+'/createacform', jsonObject);
   }
 
@@ -77,6 +79,12 @@ export class ServerService {
     return this.http.get<AppointmentEntity[]>('http://localhost:'+ this.portNo+"/ac/"+ acID.toString()+'/approved');
   }
 
+  public getAppointmentEntriesByAcID(acID:number):Observable<any>
+  { 
+    return this.http.get<AppointmentEntity[]>('http://localhost:'+ this.portNo+"/ac/appEL/"+ acID.toString());
+  }
+
+
   public getNotApprovedAppointmentEntriesByAcID(acID:number):Observable<any>
   {
     return this.http.get<AppointmentEntity[]>('http://localhost:'+ this.portNo+"/ac/"+ acID.toString()+'/notapproved');
@@ -85,6 +93,10 @@ export class ServerService {
   public approveAppointmentEntryByAeID(aeID:number):Observable<any>
   {
     return this.http.put('http://localhost:'+ this.portNo+'/ac/ae/approve/'+aeID.toString(),null);
+  }
+  public rejectAppointmentEntryByAeID(aeID:number, acID:number):Observable<any>
+  {
+    return this.http.delete('http://localhost:'+ this.portNo+'/ac/' + acID.toString()+ '/reject/' +aeID.toString());
   }
 
   public getAppointmentCalendarBySearch(searchText:string, searchCriteria:string):Observable<any>

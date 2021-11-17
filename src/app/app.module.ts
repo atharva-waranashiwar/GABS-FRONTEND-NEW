@@ -45,7 +45,8 @@ import { BookentryComponent } from './bookentry/bookentry.component';
     PagenotfoundComponent,
     AppentrybycalenderComponent,
     SearchedCalendersComponent,
-    BookentryComponent
+    BookentryComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

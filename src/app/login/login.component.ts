@@ -74,16 +74,17 @@ export class LoginComponent implements OnInit {
                   user.appointmentCalendars[i].listAppointmentEntries[j].isApproved, user.appointmentCalendars[i].listAppointmentEntries[j].timeSlot, 
                   user.appointmentCalendars[i].listAppointmentEntries[j].apointeeid, user.appointmentCalendars[i].listAppointmentEntries[j].description));
                 }
-                listAppointmentCalendars.push(new AppointmentCalendar(user.appointmentCalendars[i].acID, user.appointmentCalendars[i].ownername, user.appointmentCalendars[i].type, user.appointmentCalendars[i].location, user.appointmentCalendars[i].description, listAppEntries));
               }
+              listAppointmentCalendars.push(new AppointmentCalendar(user.appointmentCalendars[i].acID, user.appointmentCalendars[i].ownername, user.appointmentCalendars[i].type, user.appointmentCalendars[i].location, user.appointmentCalendars[i].description, listAppEntries));
             }
           }
-
+          
+          
           let userObject : User = new User(user.userID, user.userName, user.mobileNumber, 
               new Date(user.doB), user.email, user.isAdmin, listAppointmentEntries, listAppointmentCalendars);
             
           if(user.password == this.password)
-          {
+          {            
             this.userService.setUser(userObject);
             this.goTohome();
           }

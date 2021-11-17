@@ -77,4 +77,18 @@ export class User{
     {
         this._listMyAppointmentCalendars = listMyAppointmentCalendars;
     }
+    public getLMyAppointmentCalendarByAcid(acid:number):AppointmentCalendar
+    {
+        let i = 0;
+        for( i = 0; i < this._listMyAppointmentCalendars.length; i++)
+        {
+            if (this._listMyAppointmentCalendars[i].getAcID() == acid)
+            {
+                
+                break;
+            }
+        }
+        console.log(this._listMyAppointmentCalendars[i].getAcID());
+        return this._listMyAppointmentCalendars[i];
+    }
 }
