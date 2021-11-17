@@ -8,13 +8,13 @@
       <input class="form-control" id="first-name" type="number" formControlName="cid" ngModel>
    
     
-    <label for="type">Type: </label>
-    <input class="form-control" id="last-name" type="text" formControlName="type" ngModel>
-    <label for="location">Location: </label> <br>
-    <select class="form-control" formControlName="location" ngModel>
+    <label for="location">Location: </label>
+    <input class="form-control" id="location" type="text" formControlName="location" ngModel>
+    <label for="type">Type: </label> <br>
+    <select class="form-control" formControlName="type" ngModel>
       <option value="default">----</option>
-      <option *ngFor="let city of citys" [value]="city">
-          {{city}}
+      <option *ngFor="let typeA of type" [value]="typeA">
+          {{typeA}}
       </option>
     </select> <br>
     <label for="desc">Description: </label>

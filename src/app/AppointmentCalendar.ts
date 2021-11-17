@@ -52,6 +52,30 @@ export class AppointmentCalendar{
     {
         return this._listAppointmentEntries;
     }
+    public getListApprovedAppointmentEntries():AppointmentEntity[]
+    {
+        let ApprovedAppE:Array<AppointmentEntity> = [];
+        for (let i = 0; i<this._listAppointmentEntries.length; i++)
+        {
+            if (this._listAppointmentEntries[i].getIsApproved() == true)
+            {
+                ApprovedAppE.push(this._listAppointmentEntries[i]);
+            }
+        }
+        return ApprovedAppE;
+    }
+    public getListNotApprovedAppointmentEntries():AppointmentEntity[]
+    {
+        let NotApprovedAppE:Array<AppointmentEntity> = [];
+        for (let i = 0; i<this._listAppointmentEntries.length; i++)
+        {
+            if (this._listAppointmentEntries[i].getIsApproved() == false)
+            {
+                NotApprovedAppE.push(this._listAppointmentEntries[i]);
+            }
+        }
+        return NotApprovedAppE;
+    }
     public setListAppointmentEntries(listAppointmentEntries:AppointmentEntity[])
     {
         this._listAppointmentEntries = listAppointmentEntries;
