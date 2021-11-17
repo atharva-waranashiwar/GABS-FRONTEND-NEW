@@ -41,7 +41,7 @@ const routes: Routes = [
     component:BookAppointmentComponent,
     children:[
       {
-        path: 'appentrybycal',
+        path: 'appentrybycal/:id',
         component:AppentrybycalenderComponent
       }
     ]

@@ -14,7 +14,7 @@ export class AppentrybycalenderComponent implements OnInit {
   date:string="";
   appEntryList:Array<any>=[];
   private router =Router;
-  constructor(private ar:ActivatedRoute , private ss:ServerService, ) {
+  constructor(private ar:ActivatedRoute , private ss:ServerService) {
     this.ar.params.subscribe(newparams=>{
       this.acid=parseInt(newparams['id']) ;
     })
