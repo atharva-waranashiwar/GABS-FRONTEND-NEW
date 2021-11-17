@@ -1,0 +1,20 @@
+<div class="va">
+    <form #calenderdata = "ngForm" [formGroup]="BookEntryForm" (ngSubmit)="onSubmit(calenderdata)">
+  
+      <div class="form-group">
+            <label for="eid">Name: </label>
+            <input class="form-control"  type="text" formControlName="name" ngModel>
+
+            <label for="type">Type: </label>
+            <input class="form-control" id="last-name" type="text" formControlName="type" ngModel>
+
+            <label for="desc">Description: </label>
+            <input class="form-control" id="last-name" type="text" formControlName="desc" ngModel>
+            <button class="btn btn-primary" type="submit" >Submit</button>
+      </div>
+    
+    </form>
+  
+  
+  
+  </div>

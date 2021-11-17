@@ -1,3 +1,4 @@
+import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
 import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'register',
     component:RegisterComponent
+  },
+  {
+    path: 'appentrybycal',
+    component:AppentrybycalenderComponent
   },
   {
     path: '**',

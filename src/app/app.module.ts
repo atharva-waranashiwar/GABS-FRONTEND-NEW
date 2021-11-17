@@ -23,6 +23,9 @@ import { ServerService } from './server.service';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
 import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
+import { SearchedCalendersComponent } from './searched-calenders/searched-calenders.component';
+import { BookentryComponent } from './bookentry/bookentry.component';
 
 
 @NgModule({
@@ -38,9 +41,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     LoginComponent,
     RegisterComponent,
     CalenderdetailComponent,
-    AppentrylistComponent
-    PagenotfoundComponent
-
+    AppentrylistComponent,
+    PagenotfoundComponent,
+    AppentrybycalenderComponent,
+    SearchedCalendersComponent,
+    BookentryComponent
   ],
   imports: [
     BrowserModule,

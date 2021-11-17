@@ -1,0 +1,32 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import { ServerService } from '../server.service';
+import { Router } from '@angular/router';
+import { inject } from '@angular/core/testing';
+
+@Component({
+  selector: 'app-appentrybycalender',
+  templateUrl: './appentrybycalender.component.html',
+  styleUrls: ['./appentrybycalender.component.css']
+})
+export class AppentrybycalenderComponent implements OnInit {
+  appcid:number=0;
+  date:string="";
+  appEntryList:Array<any>=[];
+  private router =Router;
+  constructor(private ar:ActivatedRoute , private ss:ServerService, ) {
+    this.ar.params.subscribe(newparams=>{
+      this.appcid=parseInt(newparams['id']) ;
+    })
+   }
+
+  ngOnInit(): void {
+    this.ss.getUnbookedAppointmentEntitiesByAcIDAndDate(this.appcid, this.date).subscribe(response=>{
+      this.appEntryList=response;
+    })
+  }
+  book(){
+    (<any>this.router).navigate(['/bookentry']);
+  }
+
+}
