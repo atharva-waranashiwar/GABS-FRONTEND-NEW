@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
+import { Router, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,7 +14,7 @@ import { BookAppointmentComponent } from './book-appointment/book-appointment.co
 import { CreateNewCalenderComponent } from './create-new-calender/create-new-calender.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-//import {RouterModule,Routes} from '@angular/router';
+
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
@@ -54,9 +54,10 @@ import { BookentryComponent } from './bookentry/bookentry.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot([])
   ],
-  providers: [UserService, PortService, ServerService,HttpClient,RouterModule,ActivatedRoute, Router],
+  providers: [UserService, PortService, ServerService,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

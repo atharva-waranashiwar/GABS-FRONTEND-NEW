@@ -22,7 +22,9 @@ export class BookAppointmentComponent implements OnInit {
   }
   searchfn(){
     this.serverComm.getAppointmentCalendarBySearch(this.search,this.searchby).subscribe(calenders=>{
-      this.searchedCalenders=calenders;
+      console.log(calenders);
+      
+      //this.searchedCalenders=calenders;
     })
   }
 
