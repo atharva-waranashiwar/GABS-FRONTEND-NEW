@@ -9,16 +9,6 @@
     </select>
     <button (click)="searchfn()">search</button>
     <br>
-    {{search}}
 </form>
-<h4>Search Results:</h4>
-<div class="table">
-<table>
-    <thead>
-        <td>Name of Owner</td>
-        <td>type of calender</td>
-        <td>Location</td>
-        <td>Description</td>
-    </thead>
-</table>
-</div>
+<h1>Search Results:</h1>
+<app-searched-calenders [applist]="searchedCalenders"></app-searched-calenders>

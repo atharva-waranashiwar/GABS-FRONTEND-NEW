@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <h2>Calender ID</h2>
+                </div>
+                <div class="col-sm-3">
+                    <h2>Type</h2>      
+                </div>
+                <div class="col-sm-3">
+                    <h2>Location</h2>
+                </div>
+                <div class="col-sm-3">
+                    <h2>View</h2>
+                </div>
+
+    </div>
+    <div class="row" *ngFor="let element of applist">
+        <div class="col-sm-2">
+    {{element._acID}}
+        </div>
+        <div class="col-sm-3">
+            {{element._type}}       
+        </div>
+        <div class="col-sm-3">
+            {{element._location}}
+        </div>
+        <div class="col-sm-3">
+             <a [routerLink]="['appentrybycal',element._acID]">Click</a>
+           
+        </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>
+

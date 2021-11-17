@@ -1,3 +1,4 @@
+import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
 import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +11,7 @@ import { MyCalenderComponent } from './my-calender/my-calender.component';
 import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
+
 
 const routes: Routes = [
   { //default
@@ -36,7 +38,13 @@ const routes: Routes = [
   },
   {
     path:'bookApp',
-    component:BookAppointmentComponent
+    component:BookAppointmentComponent,
+    children:[
+      {
+        path: 'appentrybycal',
+        component:AppentrybycalenderComponent
+      }
+    ]
   },
   {
     path: 'createCal',
@@ -46,6 +54,7 @@ const routes: Routes = [
     path: 'register',
     component:RegisterComponent
   },
+  
   {
     path: '**',
     component:PagenotfoundComponent
