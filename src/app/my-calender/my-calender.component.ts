@@ -7,11 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./my-calender.component.css']
 })
 export class MyCalenderComponent implements OnInit {
-
- 
-   
-  
-
   constructor(private router:Router) { }
 
   ngOnInit(): void {
