@@ -20,7 +20,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
 import { PortService } from './port.service';
 import { ServerService } from './server.service';
+import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
+import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     CreateNewCalenderComponent,
     LoginComponent,
     RegisterComponent,
+    CalenderdetailComponent,
+    AppentrylistComponent
     PagenotfoundComponent
+
   ],
   imports: [
     BrowserModule,

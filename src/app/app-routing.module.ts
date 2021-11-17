@@ -1,6 +1,7 @@
 import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { CreateNewCalenderComponent } from './create-new-calender/create-new-calender.component';
 import { HomeComponent } from './home/home.component';
@@ -24,7 +25,13 @@ const routes: Routes = [
   },
   {
     path:'myCal',
-    component:MyCalenderComponent
+    component:MyCalenderComponent,
+    children:[
+      {
+        path:'appEList/:id',
+        component:AppentrylistComponent
+      }
+    ]
   },
   {
     path:'bookApp',
@@ -42,6 +49,7 @@ const routes: Routes = [
     path: '**',
     component:PagenotfoundComponent
   }
+  
 
 ];
 
