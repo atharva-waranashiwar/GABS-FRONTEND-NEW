@@ -10,18 +10,18 @@ import { inject } from '@angular/core/testing';
   styleUrls: ['./appentrybycalender.component.css']
 })
 export class AppentrybycalenderComponent implements OnInit {
-  appcid:number=0;
+  acid:number=0;
   date:string="";
   appEntryList:Array<any>=[];
   private router =Router;
   constructor(private ar:ActivatedRoute , private ss:ServerService, ) {
     this.ar.params.subscribe(newparams=>{
-      this.appcid=parseInt(newparams['id']) ;
+      this.acid=parseInt(newparams['id']) ;
     })
    }
 
   ngOnInit(): void {
-    this.ss.getUnbookedAppointmentEntitiesByAcIDAndDate(this.appcid, this.date).subscribe(response=>{
+    this.ss.getUnbookedAppointmentEntitiesByAcIDAndDate(this.acid, this.date).subscribe(response=>{
       this.appEntryList=response;
     })
   }

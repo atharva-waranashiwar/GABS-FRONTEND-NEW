@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,7 +15,7 @@ import { CreateNewCalenderComponent } from './create-new-calender/create-new-cal
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 //import {RouterModule,Routes} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { UserService } from './user.service';
 import { PortService } from './port.service';
@@ -55,7 +55,7 @@ import { BookentryComponent } from './bookentry/bookentry.component';
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [UserService, PortService, ServerService],
+  providers: [UserService, PortService, ServerService,HttpClient,RouterModule,ActivatedRoute, Router],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
