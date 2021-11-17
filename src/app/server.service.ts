@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { PortService } from './port.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from './User';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { UserService } from './user.service';
 import { AppointmentEntity } from './AppointmentEntity';
 import { AppointmentCalendar } from './AppointmentCalendar';
@@ -20,7 +21,14 @@ export class ServerService {
 
   public getUser(userName:string):Observable<any>
   {
-    return this.http.get<User>('http://localhost:'+ this.portNo+ "/users/"+userName);
+    return this.http.get<User>('http://localhost:'+ this.portNo+ "/users/"+userName)
+    .pipe(
+      catchError(error => {
+        console.log(error);
+        return throwError(error);
+        
+      })
+    );
   }
 
   public addUser(userID:number,userName:string, mobileNumber:string, DoB:string, email:string, password:string) : Observable<any>
@@ -30,11 +38,11 @@ export class ServerService {
       'userName':userName,
       'mobileNumber':mobileNumber,
       'Dob':DoB,
-      'email':userName,
+      'email':email,
       'isAdmin':false,
       'password':password
     }
-    return this.http.post('http://localhost:'+ this.portNo+'/reg', jsonObject)
+    return this.http.post('http://localhost:'+ this.portNo+'/reg/'+DoB, jsonObject)
   }
 
   public getAppointmentEntriesByOwner(userID:number):Observable<any>

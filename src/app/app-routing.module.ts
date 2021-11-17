@@ -1,12 +1,14 @@
 import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { CreateNewCalenderComponent } from './create-new-calender/create-new-calender.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MyCalenderComponent } from './my-calender/my-calender.component';
 import { RegisterComponent } from './register/register.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { //default
@@ -23,7 +25,13 @@ const routes: Routes = [
   },
   {
     path:'myCal',
-    component:MyCalenderComponent
+    component:MyCalenderComponent,
+    children:[
+      {
+        path:'appEList/:id',
+        component:AppentrylistComponent
+      }
+    ]
   },
   {
     path:'bookApp',
@@ -36,7 +44,12 @@ const routes: Routes = [
   {
     path: 'register',
     component:RegisterComponent
+  },
+  {
+    path: '**',
+    component:PagenotfoundComponent
   }
+  
 
 ];
 
