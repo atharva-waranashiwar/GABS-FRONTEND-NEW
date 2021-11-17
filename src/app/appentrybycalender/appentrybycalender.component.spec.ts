@@ -1,14 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, inject, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppentrybycalenderComponent } from './appentrybycalender.component';
-
-describe('AppentrybycalenderComponent', () => {
+import {
+  HttpClientTestingModule,
+  HttpTestingController
+} from '@angular/common/http/testing';
+//import { RouterTestingModule } from "@angular/router/testing";
+fdescribe('AppentrybycalenderComponent', () => {
   let component: AppentrybycalenderComponent;
   let fixture: ComponentFixture<AppentrybycalenderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppentrybycalenderComponent ]
+      declarations: [ AppentrybycalenderComponent ],
+      imports: [RouterTestingModule, HttpClientTestingModule],
     })
     .compileComponents();
   });
@@ -19,7 +24,8 @@ describe('AppentrybycalenderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+  it('should create',() => {
+      expect(component).toBeTruthy();
+    }
+  )
 });
