@@ -21,10 +21,8 @@ import { UserService } from './user.service';
 import { PortService } from './port.service';
 import { ServerService } from './server.service';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
-import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
-import { SearchedCalendersComponent } from './searched-calenders/searched-calenders.component';
 import { BookentryComponent } from './bookentry/bookentry.component';
 
 
@@ -41,10 +39,8 @@ import { BookentryComponent } from './bookentry/bookentry.component';
     LoginComponent,
     RegisterComponent,
     CalenderdetailComponent,
-    AppentrylistComponent,
     PagenotfoundComponent,
     AppentrybycalenderComponent,
-    SearchedCalendersComponent,
     BookentryComponent,
     PagenotfoundComponent
   ],

@@ -11,5 +11,46 @@
     <br>
 </form>
 <h1>Search Results:</h1>
-<app-searched-calenders [applist]="searchedCalenders"></app-searched-calenders>
+<div class="container">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Appointment Calendar ID </th>
+                <th>Owner </th>
+                <th>Type </th>
+                <th>Location </th>
+                <th>Description </th>
+                <th>Select Date</th>
+                <th>Select Appointment Timeslot</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appC of searchedCalenders">
+                <td>{{appC.getAcID()}}</td>
+                <td>{{appC.getOwnerName()}}</td>
+                <td>{{appC.getType()}}</td>
+                <td>{{appC.getLocation()}}</td>
+                <td>{{appC.getDescription()}}</td>
+                <td>
+                    <input [(ngModel)]="dateinput" (change)="onSubmitDate(appC.getAcID())" type="date">
+                </td>
+                <td>
+                    <select [(ngModel)]="timeSlotSelected" (change)="onSubmitTimeSlot(appC.getAcID())">
+                        <option value="" disabled selected>Choose Timeslot</option>
+                        <option *ngFor="let fts of freeTimeSlots" [value]="fts">{{fts}}</option>
+                    </select>
+                    <!-- <form>
+                        <select [(ngModel)]="selectedValue" name="selected">
+                            <option value="default" name="something">----</option>
+                            <option *ngFor="let fts of freeTimeSlots" [(ngValue)]="fts" name="something2" (input) = "onSubmitTimeSlot(fts, appC.getAcID())">{{fts}}</option> 
+                        </select>
+                    </form> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ul>
+    <li *ngFor="let appC of searchedCalenders"><a [routerLink]="['appentrybycalender',appC.getAcID()]">{{appC.getAcID()}}</a></li>
+</ul>
 <router-outlet></router-outlet>

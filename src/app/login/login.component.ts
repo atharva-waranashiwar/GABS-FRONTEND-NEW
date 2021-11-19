@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthServicveService } from '../auth-servicve.service';
 import { RegisterComponent } from '../register/register.component';
 import { UserService } from '../user.service';
 import { AppointmentEntity } from '../AppointmentEntity';
