@@ -1,8 +1,6 @@
 import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
-import { componentFactoryName } from '@angular/compiler';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppentrylistComponent } from './appentrylist/appentrylist.component';
 import { BookAppointmentComponent } from './book-appointment/book-appointment.component';
 import { CreateNewCalenderComponent } from './create-new-calender/create-new-calender.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +9,7 @@ import { MyCalenderComponent } from './my-calender/my-calender.component';
 import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
+import { BookentryComponent } from './bookentry/bookentry.component';
 
 
 const routes: Routes = [
@@ -43,6 +42,10 @@ const routes: Routes = [
       {
         path: 'appentrybycal/:id',
         component:AppentrybycalenderComponent
+      },
+      {
+        path:'bookentry/:timeslot',
+        component:BookentryComponent
       }
     ]
   },

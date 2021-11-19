@@ -101,7 +101,7 @@ export class ServerService {
 
   public getAppointmentCalendarBySearch(searchText:string, searchCriteria:string):Observable<any>
   {
-    return this.http.get<AppointmentCalendar[]>('http://localhost:'+ this.portNo + '/book/'+ searchText + '/' + searchCriteria);
+    return this.http.get<AppointmentCalendar[]>('http://localhost:'+ this.portNo + '/book/search/'+ searchText + '/' + searchCriteria);
   }
   public getUnbookedAppointmentEntitiesByAcIDAndDate(acID:number, date:string):Observable<any>
   {
