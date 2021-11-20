@@ -24,6 +24,7 @@ import { CalenderdetailComponent } from './calenderdetail/calenderdetail.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppentrybycalenderComponent } from './appentrybycalender/appentrybycalender.component';
 import { BookentryComponent } from './bookentry/bookentry.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BookentryComponent } from './bookentry/bookentry.component';
     PagenotfoundComponent,
     AppentrybycalenderComponent,
     BookentryComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

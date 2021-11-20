@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
           
           let userObject : User = new User(user.userID, user.userName, user.mobileNumber, 
               new Date(user.doB), user.email, user.isAdmin, listAppointmentEntries, listAppointmentCalendars);
-            
+          userObject.setIsLoggedIn(true);
           if(user.password == this.password)
           {            
             this.userService.setUser(userObject);

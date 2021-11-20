@@ -10,6 +10,7 @@ export class User{
     private _isAdmin:boolean = false;
     private _listMyBookedAppointmentEntries:AppointmentEntity[] = [];
     private _listMyAppointmentCalendars:AppointmentCalendar[] = [];
+    private _isLoggedIn = false;
 
     constructor(userID:number, userName:string, mobileNumber:string,DoB:Date,
             email:string, isAdmin:boolean, listMyBookedAppointmentEntries:AppointmentEntity[],
@@ -28,6 +29,12 @@ export class User{
     }
     public setuserID(aeID:number) {
         this._userID = aeID;
+    }
+    public getIsLoggedIn():boolean {
+        return this._isLoggedIn;
+    }
+    public setIsLoggedIn(isl:boolean) {
+        this._isLoggedIn = isl;
     }
     public getUserName():string {
         return this._userName;

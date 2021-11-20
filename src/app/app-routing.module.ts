@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { CalenderdetailComponent } from './calenderdetail/calenderdetail.component';
 import { BookentryComponent } from './bookentry/bookentry.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path:'login',
     component:LoginComponent
+  },
+  {
+    path:'logout',
+    component:LogoutComponent
   },
   {
     path:'home',
