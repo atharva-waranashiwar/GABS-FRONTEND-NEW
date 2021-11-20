@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { AppointmentCalendar } from '../AppointmentCalendar';
 import { AppointmentEntity } from '../AppointmentEntity';
+import { DatetimeslotService } from '../datetimeslot.service';
 
 
 @Component({
@@ -15,12 +16,13 @@ import { AppointmentEntity } from '../AppointmentEntity';
 })
 export class BookAppointmentComponent implements OnInit {
   search : string ="";
-  searchby:string="username";
+  searchby:string="Username";
   dateinput:string="";
   searchedCalenders:Array<AppointmentCalendar>=[];
   freeTimeSlots:Array<string>=[];
   timeSlotSelected:string="";
-  constructor(private userService:UserService, private router: Router, private portNumber:PortService, private serverComm:ServerService) { }
+  acidSelected:number;
+  constructor(private datetimeslot:DatetimeslotService, private userService:UserService, private router: Router, private portNumber:PortService, private serverComm:ServerService) { }
 
   ngOnInit(): void {
     
@@ -65,10 +67,14 @@ export class BookAppointmentComponent implements OnInit {
     {
       numberedTimeslot = 7;
     }
-    this.router.navigate(['bookApp/bookentry', numberedTimeslot])
+    this.datetimeslot.setDate(this.dateinput);
+    this.datetimeslot.setTimeslot(numberedTimeslot);
+    this.datetimeslot.setAcid(this.acidSelected);
+    this.router.navigate(['bookApp/bookentry'])
   }
   public onSubmitDate(acid: number) {
 
+    this.acidSelected = acid;
     this.serverComm.getUnbookedAppointmentEntitiesByAcIDAndDate(acid, this.dateinput).subscribe((response)=>{
       this.freeTimeSlots = [];
         for(let i = 0;i<response.length;i++)

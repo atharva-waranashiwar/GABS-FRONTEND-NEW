@@ -44,7 +44,7 @@ const routes: Routes = [
         component:AppentrybycalenderComponent
       },
       {
-        path:'bookentry/:timeslot',
+        path:'bookentry',
         component:BookentryComponent
       }
     ]

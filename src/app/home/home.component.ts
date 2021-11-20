@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { AppointmentEntity } from '../AppointmentEntity';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +10,18 @@ import { UserService } from '../user.service';
 export class HomeComponent implements OnInit {
 
   username:string="";// change username to userID
+  appEntryList:Array<AppointmentEntity>=[];
+  userID:number=0;
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService) {
+    this.userService.getUser().subscribe(user=>{ 
+             
+      this.userID = user.getuserID();
+      this.appEntryList = user.getListMyBookedAppointmentEntries();    
+     })
+   }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe(user =>
-      {
-        
-        
-        this.username = user.getUserName();
-      })
     
   }
 
