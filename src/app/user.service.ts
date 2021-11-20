@@ -7,7 +7,9 @@ import { User } from './User';
 })
 export class UserService {
   private _user = new ReplaySubject<User>();
+
   readonly user = this._user.asObservable();
+
 
   public getUser(): Observable<User> {
     return this._user;
